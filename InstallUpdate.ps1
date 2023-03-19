@@ -91,6 +91,10 @@ Write-Host "Setting Working Directory..."
 Set-Location -Path $PSScriptRoot
 Write-Host -ForegroundColor Green "Success"
 
+Write-Host "Set Directory Safety"
+Invoke-Command-Surround-Output git config --global --add safe.directory $PSScriptRoot
+Write-Host -ForegroundColor Green "Success"
+
 Write-Host "Setting ExecutionPolicy to Bypass..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
