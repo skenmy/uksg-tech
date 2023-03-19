@@ -120,13 +120,6 @@ Invoke-Command-Surround-Output choco upgrade git -y
 Set-Environment
 
 Write-Host "Checking for script updates..."
-Write-Host -ForegroundColor Yellow "Errors in the next four commands can be safely ignored!"
-Invoke-Command-Surround-Output-Ignore-Exit git init
-Invoke-Command-Surround-Output-Ignore-Exit git config --global --add safe.directory $PSScriptRoot
-Invoke-Command-Surround-Output-Ignore-Exit git remote add origin https://github.com/skenmy/uksg-tech.git
-Invoke-Command-Surround-Output-Ignore-Exit git branch --set-upstream-to=origin/main main
-
-
 Invoke-Command-Surround-Output git fetch
 
 $gitBehind = cmd.exe /c 'git status | find /i "Your branch is behind"'
@@ -182,7 +175,7 @@ Invoke-Command-Surround-Output npm install -g bower
 Write-Header "NodeCG Install & Configuration"
 Write-Host "Installing / Updating NodeCG..."
 Invoke-Command-Surround-Output npm install -g nodecg-cli
- 
+
 # Manual Steps
 Write-Header "Manual Installation Steps"
 
