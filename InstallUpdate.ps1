@@ -182,8 +182,20 @@ Invoke-Command-Surround-Output npm install -g bower
 
 # Install / Upgrade NodeCG
 Write-Header "NodeCG Install & Configuration"
-Write-Host "Installing / Updating NodeCG..."
+Write-Host "Installing / Updating NodeCG CLI..."
 Invoke-Command-Surround-Output npm install -g nodecg-cli
+
+if (-not Test-Path -Path $PSScriptRoot\nodecg) {
+    Write-Host "Creating NodeCG Directory..."
+    New-Item -Path $PSScriptRoot -Name "nodecg" -ItemType "directory"
+    Write-Host "First time NodeCG Setup..."
+    Set-Location -Path $PSScriptRoot\nodecg
+    Invoke-Command-Surround-Output nodecg setup
+}
+
+Set-Location -Path $PSScriptRoot\nodecg
+
+Write-Host "Installing / Updating nodecg-speedcontrol..."
 
 # Manual Steps
 Write-Header "Manual Installation Steps"
