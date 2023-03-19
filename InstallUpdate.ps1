@@ -100,8 +100,9 @@ Write-Host "Setting System Timezone..."
 Set-TimeZone -Id "GMT Standard Time"
 Write-Host -ForegroundColor Green "Success"
 
-Write-Host "Setting System Locale..."
+Write-Host "Setting System Locale & Input Settings..."
 Set-WinSystemLocale en-GB
+Set-WinDefaultInputMethodOverride -InputTip "0809:00000809" # en-GB Keyboard Layout
 Write-Host -ForegroundColor Green "Success"
 
 # Install / Upgrade Chocolatey
