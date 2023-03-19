@@ -80,6 +80,11 @@ Add-Type -AssemblyName System.Windows.Forms
 $browser = New-Object System.Windows.Forms.FolderBrowserDialog
 $null = $browser.ShowDialog()
 $path = $browser.SelectedPath
+if ($path -eq "") {
+    Write-Host -ForegroundColor Red "You did not select a valid directory!"
+    Exit-After-Keypress
+}
+
 Write-Host "Using "$path
 Enter-After-Keypress
 
