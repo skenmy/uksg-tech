@@ -87,6 +87,10 @@ Enter-After-Keypress
 
 # Set System Settings
 Write-Header "System Settings"
+Write-Host "Setting Working Directory..."
+Set-Location -Path $PSScriptRoot
+Write-Host -ForegroundColor Green "Success"
+
 Write-Host "Setting ExecutionPolicy to Bypass..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
@@ -116,6 +120,7 @@ Invoke-Command-Surround-Output choco upgrade git -y
 Set-Environment
 
 Write-Host "Checking for script updates..."
+Write-Host -ForegroundColor Yellow "Errors in the next two commands can be safely ignored!"
 Invoke-Command-Surround-Output-Ignore-Exit git init
 Invoke-Command-Surround-Output-Ignore-Exit git remote add origin https://github.com/skenmy/uksg-tech.git
 Invoke-Command-Surround-Output git fetch
@@ -155,8 +160,7 @@ Invoke-Command-Surround-Output choco upgrade x-air-edit -y
 Write-Host "Installing / Updating NodeJS (LTS)..."
 Invoke-Command-Surround-Output choco upgrade nodejs-lts -y
 
-Refresh-Environment
-
+Set-Environment
 if ( -not (Get-Command npm -errorAction SilentlyContinue)) {
     Write-Host -ForegroundColor Red "NPM not found in PATH - check NodeJS installation"
     Write-Host "This is a problem, but might be solved by just trying again."
