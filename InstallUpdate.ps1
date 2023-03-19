@@ -185,7 +185,7 @@ Write-Header "NodeCG Install & Configuration"
 Write-Host "Installing / Updating NodeCG CLI..."
 Invoke-Command-Surround-Output npm install -g nodecg-cli
 
-if (-not Test-Path -Path $PSScriptRoot\nodecg) {
+if (-not (Test-Path -Path $PSScriptRoot\nodecg)) {
     Write-Host "Creating NodeCG Directory..."
     New-Item -Path $PSScriptRoot -Name "nodecg" -ItemType "directory"
     Write-Host "First time NodeCG Setup..."
