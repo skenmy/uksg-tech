@@ -4,7 +4,7 @@
 1. Create a directory somewhere to hold everything (normally a directory on the Desktop works well!)
 2. In an Administrator Powershell, run this command:
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/skenmy/uksg-tech/main/InitScript.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $ccstring=-join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_}); iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/skenmy/uksg-tech/main/InitScript.ps1?cc=$ccstring'))
 ```
 3. When prompted, select the directory created in Step 1.
 4. When finished, open the directory you created and you will find all the scripts! See below for instructions!
