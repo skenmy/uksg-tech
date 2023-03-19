@@ -21,4 +21,4 @@ This script will first try to update itself, then will run through and install /
 ### InitScript.ps1
 **NOTE:** It is not advised to run this script on anything except a completely unconfigured PC!
 
-This script performs initial setup of a PC that has not been configured. It downloads this repository to the local machine.
+This script performs minimal setup of a PC that has not been configured. It downloads this repository to the local machine, to allow for the more advanced scripts to be run.
