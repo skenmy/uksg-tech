@@ -96,6 +96,14 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
 Write-Host -ForegroundColor Green "Success"
 
+Write-Host "Setting System Timezone..."
+Set-TimeZone -Id "GMT Standard Time"
+Write-Host -ForegroundColor Green "Success"
+
+Write-Host "Setting System Locale..."
+Set-WinSystemLocale en-GB
+Write-Host -ForegroundColor Green "Success"
+
 # Install / Upgrade Chocolatey
 Write-Header "Package Manager"
 Write-Host "Installing / Updating Chocolatey..."
