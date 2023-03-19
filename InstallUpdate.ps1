@@ -202,28 +202,28 @@ Set-Location -Path $PSScriptRoot\nodecg\bundles
 Invoke-Command-Surround-Output git clone https://github.com/speedcontrol/nodecg-speedcontrol.git
 Set-Location -Path $PSScriptRoot\nodecg\bundles\nodecg-speedcontrol
 Invoke-Command-Surround-Output git checkout build
-Invoke-Command-Surround-Output npm i -production
+Invoke-Command-Surround-Output npm i --omit=dev
 
 Write-Host "Installing / Updating esa-layouts..."
 Set-Location -Path $PSScriptRoot\nodecg\bundles
 Invoke-Command-Surround-Output git clone https://github.com/esamarathon/esa-layouts.git
 Set-Location -Path $PSScriptRoot\nodecg\bundles\esa-layouts
 Invoke-Command-Surround-Output git checkout build
-Invoke-Command-Surround-Output npm i -production
+Invoke-Command-Surround-Output npm i --omit=dev
 
 Write-Host "Installing / Updating esa-featuredchannels..."
 Set-Location -Path $PSScriptRoot\nodecg\bundles
 Invoke-Command-Surround-Output git clone https://github.com/esamarathon/esa-featuredchannels.git
 Set-Location -Path $PSScriptRoot\nodecg\bundles\esa-featuredchannels
 Invoke-Command-Surround-Output git checkout build
-Invoke-Command-Surround-Output npm i -production
+Invoke-Command-Surround-Output npm i --omit=dev
 
 Write-Host "Installing / Updating esa-commercials..."
 Set-Location -Path $PSScriptRoot\nodecg\bundles
 Invoke-Command-Surround-Output git clone https://github.com/esamarathon/esa-commercials.git
 Set-Location -Path $PSScriptRoot\nodecg\bundles\esa-commercials
 Invoke-Command-Surround-Output git checkout build
-Invoke-Command-Surround-Output npm i -production
+Invoke-Command-Surround-Output npm i --omit=dev
 
 # Finished
 Write-Header "All Done!"
