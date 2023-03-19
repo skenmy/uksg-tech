@@ -28,14 +28,14 @@ function Write-Header {
 
 function Exit-After-Keypress {
     Write-Host -NoNewline "Press any key to exit..."
-    $null = $Host.UI.RawUI.ReadKey('NoEcho');
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyUp');
     Write-Host ""
     exit
 }
 
 function Enter-After-Keypress {
     Write-Host -NoNewline "Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey('NoEcho');
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyUp');
     Write-Host ""
 }
 
