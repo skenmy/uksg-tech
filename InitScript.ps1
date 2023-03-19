@@ -122,6 +122,10 @@ Write-Host "Downloading Scripts & Configs..."
 Invoke-Command-Surround-Output git clone https://github.com/skenmy/uksg-tech.git .
 Write-Host -ForegroundColor Green "Success"
 
+Write-Host "Set Directory Safety"
+Invoke-Command-Surround-Output git config --global --add safe.directory $path
+Write-Host -ForegroundColor Green "Success"
+
 Write-Header "All Done!"
 Write-Host -ForegroundColor Green "You can now use the scripts in "$path" to setup this computer!"
 Exit-After-Keypress
