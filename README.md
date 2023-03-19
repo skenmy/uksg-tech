@@ -1,4 +1,4 @@
-# uksg-tech
+# UKSG Tech PC - Scripts and Configuration
 
 ## Setting up a completely fresh PC
 1. Create a directory somewhere to hold everything (normally a directory on the Desktop works well!)
@@ -14,6 +14,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Run this first. It makes some simple tweaks to the Windows Registry to enable some features that are important.
 
 ### InstallUpdate.ps1
-NOTE: This must be run in an Administrator Powershell (if you've run 1-RegistryTweaks.reg, you can Right Click -> Run as administrator)
+**NOTE:** This must be run in an Administrator Powershell _(if you've run 1-RegistryTweaks.reg, you can Right Click -> Run as administrator)_
 
 This script will first try to update itself, then will run through and install / update all required software for the PC. Follow any instructions given. The script will also do some automatic configuration of software - so you may see applications launch, do things, and close. This is normal. The script will tell you when it is done.
+
+### InitScript.ps1
+**NOTE:** It is not advised to run this script on anything except a completely unconfigured PC!
+
+This script performs initial setup of a PC that has not been configured. It downloads this repository to the local machine.
